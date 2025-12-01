@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="answers/answers.csproj" />
+  <Project Path="day1/day1.csproj" />
+  <Project Path="shared/shared.csproj" />
+</Solution>
