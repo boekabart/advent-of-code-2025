@@ -34,7 +34,7 @@ public static class D1P1Tests
     [Fact]
     internal static void RegressionTest()
     {
-        var expected = 1970720;
+        var expected = 999;
         Input.RawInput
             .Part1Answer()
             .Should().Be(expected);

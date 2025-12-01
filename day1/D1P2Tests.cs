@@ -8,7 +8,7 @@ public class D1P2Tests
     [Fact]
     internal static void AcceptanceTest()
     {
-        var expected = 31;
+        var expected = 6;
         Input.ExampleInput
             .Part2Answer()
             .Should().Be(expected);
@@ -17,7 +17,7 @@ public class D1P2Tests
     [Fact]
     internal static void RegressionTest()
     {
-        var expected = 17191599;
+        var expected = 6099;
         Input.RawInput
             .Part2Answer()
             .Should().Be(expected);
