@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="answers/answers.csproj" />
   <Project Path="day1/day1.csproj" />
+  <Project Path="day2/day2.csproj" />
   <Project Path="shared/shared.csproj" />
 </Solution>
