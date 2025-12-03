@@ -5,34 +5,39 @@ namespace day3;
 
 public static class D3P1Tests
 {
-    [InlineData("",null)]
-    [Theory]
-    internal static void ParseInputLineTest(string line, Thing? expectedThing)
-    {
-        var actualThing = line.TryParseAsThing();
-        actualThing.Should().Be(expectedThing);
-    }
+   
 
     [Fact]
     internal static void ParseInputTest()
     {
         var things = Input.ExampleInput.ParseThings().ToArray();
-        things.Should().HaveCount(0);
+        things.Should().HaveCount(4);
     }
 
-    [Fact(Skip="ToDo")]
+    [Fact]
+    internal static void AsResultTest()
+    {
+        "234234234234278".TryParseAsThing()!.AsResult().Should().Be(78);
+    }
+    [Fact]
+    internal static void AsResultCornerCaseTest()
+    {
+        "2".TryParseAsThing()!.AsResult().Should().Be(2);
+    }
+
+    [Fact]
     internal static void AcceptanceTest()
     {
-        var expected = 42;
+        var expected = 357;
         Input.ExampleInput
             .Part1Answer()
             .Should().Be(expected);
     }
 
-    [Fact(Skip = "ToDo")]
+    [Fact]
     internal static void RegressionTest()
     {
-        var expected = 42;
+        var expected = 17095;
         Input.RawInput
             .Part1Answer()
             .Should().Be(expected);
