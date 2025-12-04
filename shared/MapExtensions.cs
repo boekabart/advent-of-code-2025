@@ -7,6 +7,10 @@ public static class MapExtensions
     public static Pos Right(this Pos pos) => pos with { X = pos.X + 1 };
     public static Pos Down(this Pos pos) => pos with { Y = pos.Y + 1 };
 
+    public static Pos UpLeft(this Pos pos) => pos.Up().Left();
+    public static Pos UpRight(this Pos pos) => pos.Up().Right();
+    public static Pos DownRight(this Pos pos) => pos.Down().Right();
+    public static Pos DownLeft(this Pos pos) => pos.Down().Left();
     public static IEnumerable<Pos> FourAround(this Pos pos)
     {
         yield return pos.Left();
@@ -15,6 +19,17 @@ public static class MapExtensions
         yield return pos.Down();
     }
 
+    public static IEnumerable<Pos> EightAround(this Pos pos)
+    {
+        yield return pos.Left();
+        yield return pos.Right();
+        yield return pos.Up();
+        yield return pos.Down();
+        yield return pos.UpLeft();
+        yield return pos.UpRight();
+        yield return pos.DownLeft();
+        yield return pos.DownRight();
+    }
     public static IEnumerable<Pos> WithManhattanDistance(this Pos pos, int minDist, int maxDist = 0)
     {
         if (maxDist == 0) maxDist = minDist;
