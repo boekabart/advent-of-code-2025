@@ -5,34 +5,28 @@ namespace day5;
 
 public static class D5P1Tests
 {
-    [InlineData("",null)]
-    [Theory]
-    internal static void ParseInputLineTest(string line, Thing? expectedThing)
-    {
-        var actualThing = line.TryParseAsThing();
-        actualThing.Should().Be(expectedThing);
-    }
-
     [Fact]
     internal static void ParseInputTest()
     {
-        var things = Input.ExampleInput.ParseThings().ToArray();
-        things.Should().HaveCount(0);
+        var things = Input.ExampleInput.ParseRanges().ToArray();
+        things.Should().HaveCount(4);
+        var ids = Input.ExampleInput.ParseIds().ToArray();
+        ids.Should().HaveCount(6);
     }
 
-    [Fact(Skip="ToDo")]
+    [Fact]
     internal static void AcceptanceTest()
     {
-        var expected = 42;
+        var expected = 3;
         Input.ExampleInput
             .Part1Answer()
             .Should().Be(expected);
     }
 
-    [Fact(Skip = "ToDo")]
+    [Fact]
     internal static void RegressionTest()
     {
-        var expected = 42;
+        var expected = 690;
         Input.RawInput
             .Part1Answer()
             .Should().Be(expected);
