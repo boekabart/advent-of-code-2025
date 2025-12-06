@@ -50,6 +50,10 @@ public static class MapExtensions
         input
             .NotEmptyTrimmedLines()
             .AsMap();
+    public static Map ParseUntrimmedMap(this string input) =>
+        input
+            .NotEmptyLines()
+            .AsMap();
 
     public static Map AsMap(this IEnumerable<string> lines)
     {
@@ -72,7 +76,7 @@ public static class MapExtensions
         map.Contains(pos) ? map.Get(pos) : def;
 
     public static bool Contains<T>(this Map<T> map, Pos pos) =>
-        pos.X >= 0 && pos.X < map.Grid[0].Length && pos.Y >= 0 && pos.Y < map.Grid.Length;
+        pos.Y >= 0 && pos.Y < map.Grid.Length && pos.X >= 0 && pos.X < map.Grid[pos.Y].Length;
 
     public static IEnumerable<Pos> AllPositions<T>(this Map<T> map)
     {
