@@ -5,34 +5,26 @@ namespace day8;
 
 public static class D8P1Tests
 {
-    [InlineData("",null)]
-    [Theory]
-    internal static void ParseInputLineTest(string line, Thing? expectedThing)
-    {
-        var actualThing = line.TryParseAsThing();
-        actualThing.Should().Be(expectedThing);
-    }
-
     [Fact]
     internal static void ParseInputTest()
     {
-        var things = Input.ExampleInput.ParseThings().ToArray();
-        things.Should().HaveCount(0);
+        var things = Input.ExampleInput.ParsePoints().ToArray();
+        things.Should().HaveCount(20);
     }
 
-    [Fact(Skip="ToDo")]
+    [Fact]
     internal static void AcceptanceTest()
     {
-        var expected = 42;
+        var expected = 40;
         Input.ExampleInput
-            .Part1Answer()
+            .Part1Answer(10)
             .Should().Be(expected);
     }
 
-    [Fact(Skip = "ToDo")]
+    [Fact(Skip = "Done")]
     internal static void RegressionTest()
     {
-        var expected = 42;
+        var expected = 90036L;
         Input.RawInput
             .Part1Answer()
             .Should().Be(expected);
