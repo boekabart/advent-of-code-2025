@@ -21,7 +21,7 @@ public static class D8P1Tests
             .Should().Be(expected);
     }
 
-    [Fact(Skip = "Done")]
+    [Fact]
     internal static void RegressionTest()
     {
         var expected = 90036L;
