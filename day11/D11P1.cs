@@ -34,7 +34,4 @@ public static class D11P1
             return null;
         return new Thing(s[0], s[1..]);
     }
-
-    internal static int GetResult(this IEnumerable<Thing> things) => things.Select(AsResult).Sum();
-    internal static int AsResult(this Thing thing) => 0;
 }

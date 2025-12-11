@@ -17,7 +17,7 @@ public class D11P2Tests
     [Fact]
     internal static void RegressionTest()
     {
-        var expected = 296006754704850L;
+        var expected = 296_006_754_704_850L;
         Input.RawInput
             .Part2Answer()
             .Should().Be(expected);
